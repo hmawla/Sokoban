@@ -42,13 +42,19 @@ public class SokobanLevel {
         }
     }
     void build(){
-        for(int i=0 ; i< 12 ; i++){
-            for(int j=0 ; j<12 ; j++){
-                if(i == 0 || i == 11 || j == 0 || j == 11){
-                    playGround[i][j] = blockTypes.OUT.val;
+        if(difficulty == 0){
+            for(int i=0 ; i< 12 ; i++){
+                for(int j=0 ; j<12 ; j++){
+                    if(i == 0 || i == 11 || j == 0 || j == 11){
+                        playGround[i][j] = blockTypes.OUT.val;
+                    }else if(i == 5 && j == 5){
+                        playGround[i][j] = blockTypes.PLAYER.val;
+                    }else
+                        playGround[i][j] = blockTypes.EMPTY.val;
                 }
             }
         }
+        
     }
     void Display(){
         for(int i=0 ; i< 12 ; i++){
